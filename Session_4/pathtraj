@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+import mdtraj as mdt
+import networkx as nx
+import numpy as np
+from scipy.spatial.distance import pdist, squareform
+from mdplus.pca import PCA
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument('ensembleA')
+parser.add_argument('topA')
+parser.add_argument('startA', type=int)
+parser.add_argument('ensembleB')
+parser.add_argument('topB')
+parser.add_argument('endB', type=int)
+parser.add_argument('pathtraj')
+
+args = parser.parse_args()
+
+tA = mdt.load(args.ensembleA, top=args.topA)
+tB = mdt.load(args.ensembleB, top=args.topB)
+ca = tA.topology.select('name CA')
+tcaA = tA.atom_slice(ca)
+tcaB = tB.atom_slice(ca)
+t_both = tcaA + tcaB
+p = PCA()
+scores = p.fit_transform(t_both.xyz)
+n_atoms = tcaA.n_atoms
+r2 = pdist(scores) / np.sqrt(n_atoms)
+r2 = squareform(r2)
+n_frames = tcaA.n_frames
+dmax = r2[:n_frames, n_frames:].min()
+print('dmax = ', dmax)
+ilist, jlist = np.where(r2 <= dmax)
+G = nx.Graph()
+for i,j in zip(ilist, jlist):
+    if j > i:
+        G.add_edge(i, j, length=r2[i, j])
+indices = nx.shortest_path(G, args.startA, args.endB + tA.n_frames, 'length')
+print(len(indices))
+prot = tA.topology.select('protein')
+tpA = tA.atom_slice(prot)
+tpB = tB.atom_slice(prot)
+tpAB = tpA + tpB
+t_path = tpAB[indices]
+t_path.save(args.pathtraj)
