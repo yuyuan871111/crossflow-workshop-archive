@@ -47,9 +47,9 @@ Next install `mdtraj` - this will be used for manipulating MD (Gromacs) files:
 pip install mdtraj
 ```
 
-Finally install `mdplus` - this will be used for some structure-related calculations:
+Finally install `mdplus` and `rdkit` - these will be used for some structure-related calculations:
 ```bash
-pip install mdplus
+pip install mdplus rdkit
 ```
 
 ### Step 4 (on Archer 2): Configure your login environment for the workshop
