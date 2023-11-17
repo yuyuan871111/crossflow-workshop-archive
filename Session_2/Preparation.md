@@ -122,8 +122,3 @@ Open your browser, and paste the second of the two URLs printed when your Jupyte
 
 From now on, everything that happens in this workshop will be done via this Jupyterlab connection. Once you have finished you will log out of this window, and then exit both terminal sessions to clean everything up. If you need to reatart things, just go back to Step 5 above.
 
-
-
-```python
-
-```

@@ -2,9 +2,18 @@
 
 In this session we will step through the process of coding an enhanced sampling workflow to map the conformational transition of adenylate kinase between the "closed" and "open" conformations.
 
-### Step 1: Orientation
+### Step 1: Preparation and Orientation
 
-In your Jupyterlab window, navigate to the *Session_3* folder. There you will find six files:
+In your Jupyterlab window, create a terminal session (if you don't already have one running), and navigate to the folder where your *jstart.sh* file is.
+
+Now download the files you will be using for the rest of the workshop:
+
+```bash
+git clone https://github.com/CCPBioSim/crossflow-workshop.git
+```
+A new folder, *crossflow-workshop* should appear.
+
+Navigate to the *crossflow-workshop/Session_3* folder. There you will find six files:
 * *1ake_em.gro* and *1ake.top*: Gromacs coordinate and topology files respectively for the closed conformational state.
 * *4ake_em.gro* and *4ake.top*: the same for the open state. 
 * *nvt.mdp*: an input file that defines parameters for a short MD simulation.
