@@ -14,12 +14,12 @@ ssh <username>@login.archer2.ac.uk
 
 The instructions here are adapted from those in the [Archer2 User Guide](https://docs.archer2.ac.uk/user-guide/).
 
-It's important you create the virtual environment in your personal `/work` folder, not in your home directory. This is `/work/<projectname>/<projectname>/<username>` - here we assume `<projectname>` is *e280* :
+It's important you create the virtual environment in your personal `/work` folder, not in your home directory. This is `/work/e280/e280/<username>`:
 
 ```bash
 module load cray-python
-python -m venv /work/e280/e280/<username>/myvenv
-source /work/e280/e280/<username>/myvenv/bin/activate
+python -m venv /work/e280/e280-workshop/<username>/myvenv
+source /work/e280/e280-workshop/<username>/myvenv/bin/activate
 ```
 
 ### Step 3 (on Archer2): Install the required Python packages
@@ -62,7 +62,7 @@ module load cray-python
 module load gromacs
 module load autodock-vina-1.2.5
 module load openbabel-3.1.1
-source /work/e280/e280/crossflow001/myvenv/bin/activate
+source /work/e280/e280-workshop/<username>/myvenv/bin/activate
 ```
 
 Log out of Archer2 and then back in again. You should find you are back in your virtual environment, and each of the following commands should give some output:
@@ -77,7 +77,7 @@ which obabel
 
 Move to your work directory:
 ```bash
-cd /work/e280/e280/<username>
+cd /work/e280/e280-workshop/<username>
 ```
 And use a text editor to create a shell script `jstart.sh` containing:
 

@@ -73,7 +73,7 @@ cluster = SLURMCluster(cores=1,
                        local_directory='$PWD',
                        job_script_prologue=['module load gromacs',
                                   'export OMP_NUM_THREADS=1',
-                                  'source /work/e280/e280/<username>/myvenv/bin/activate'])
+                                  'source /work/e280/e280-workshop/<username>/myvenv/bin/activate'])
 ```
 There is a lot to look at here; most of it is "boilerplate" and you should take a look at the *dask_jobqueue* [documentation](here) if you want a full explanation, but for now we just pull out a few key features:
 
