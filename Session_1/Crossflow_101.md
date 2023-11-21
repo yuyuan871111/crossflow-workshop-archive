@@ -91,7 +91,7 @@ reverse.set_outputs(['reversed.txt'])
 
 Go on to step 6.
 
-### Step 5b: create your fist task (*tail -r* version)
+### Step 5b: create your first task (*tail -r* version)
 
 If you were working in a unix terminal and had a file called 'lines.txt' that you wanted to reverse, you would type:
 
