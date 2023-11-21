@@ -4,3 +4,6 @@ whole
 test.txt
 lines.txt
 reversed*
+slurm*
+run_manual
+dask-scratch-space

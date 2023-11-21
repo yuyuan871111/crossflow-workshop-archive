@@ -12,6 +12,8 @@
 module load gromacs
 export OMP_NUM_THREADS=1
 
+cd /home/e280/e280/yuyang/Project/workdir/crossflow-workshop/Session_3
+
 gmx grompp -f nvt.mdp -c 1ake_em.gro -p 1ake.top -o 1ake_nvt.tpr -maxwarn 1
 srun --distribution=block:block --hint=nomultithread gmx_mpi mdrun -deffnm 1ake_nvt
 echo 0 | gmx trjconv -f 1ake_nvt.trr -s 1ake_nvt.tpr -o 1ake_nvt_whole.trr -pbc whole

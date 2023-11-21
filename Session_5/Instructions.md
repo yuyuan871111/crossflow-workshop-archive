@@ -116,12 +116,14 @@ vina.set_constant('config.conf', config)
 Copy this block into a fresh cell and run it - there should be no output.
 
 Now when we run the *vina* *Task*, instead of being:
-```
-dock_result = vina(ligand, receptor, configuration)
+```python
+# dock_result = vina(ligand, receptor, configuration)
 ```
 it's just:
-```
-dock_result = vina(ligand)
+```python
+# dock_result = vina(ligand)
+
+## because the ligand and configuration are constant 
 ```
 
 ### Step 3: Processing the Docking Results

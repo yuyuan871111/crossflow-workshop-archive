@@ -1,0 +1,3 @@
+ensemble* filter=lfs diff=lfs merge=lfs -text
+Session_3/1ake_test.trr filter=lfs diff=lfs merge=lfs -text
+pathway.mov filter=lfs diff=lfs merge=lfs -text

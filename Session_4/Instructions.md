@@ -18,7 +18,7 @@ To run *pathtraj* you specify your two ensemble trajectory files, two reference 
 The "start" and "end" structures will be the first snapshots in each of the two ensemble trajectory files, so the command you need is:
 
 ```bash
-./pathtraj ../session_3/ensembleA.xtc ../session_3/1ake_em.gro 0 ../session_3/ensembleB.xtc ../session_3/4ake_em.gro 0 pathway.pdb
+./pathtraj ../Session_3/ensembleA.xtc ../Session_3/1ake_em.gro 0 ../Session_3/ensembleB.xtc ../Session_3/4ake_em.gro 0 pathway.pdb
 ```
 The job may take a minute to run. 
 
