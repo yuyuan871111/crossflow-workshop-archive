@@ -1,12 +1,13 @@
 #!/bin/bash --login
 
 #SBATCH -J grompp_mdrun
-#SBATCH -p e280-workshop_1018917
+#SBATCH -p standard
+#SBATCH --reservation=e280-workshop_1018917
 #SBATCH -A e280-workshop
 #SBATCH --cpus-per-task=1
 #SBATCH -t 00:15:00
 #SBATCH --nodes=1
-#SBATCH --qos="reservation"
+#SBATCH --qos=reservation
 #SBATCH --tasks-per-node=128
 module load gromacs
 export OMP_NUM_THREADS=1
